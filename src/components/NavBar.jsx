@@ -7,7 +7,7 @@ function NavBar() {
         <>
             <Navbar className="bg-navbar" sticky="top"  expand="md">
                 <Container>
-                <Link className="navbar-brand logo " to="/">digital<span className="">.Shop</span> </Link>
+                <Link className="navbar-brand logo-navbar " to="/">digital<span className="">.Shop</span> </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"></Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">

@@ -3,35 +3,87 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
 :root {
     --grey-primary: #393E46;
     --grey-secondary: #929AAB;
-    --white-secondary:  #F7F7F7;
-  }
+    --white-secondary: #F7F7F7;
+}
 
-.logo {
+.logo-navbar,
+.logo-footer {
     color: var(--grey-primary);
     font-size: 24px;
     font-weight: 400;
 }
-.logo span{
+
+.logo-navbar span,
+.logo-footer span {
     color: #000;
     font-weight: 600;
 }
 
+.logo-footer {
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
 /*---------- Navbat start -----------*/
-.navbar .nav-link .cart-nbr{
+.navbar .nav-link .cart-nbr {
     border-radius: 50%;
     padding-inline: 4px;
     font-size: 10px;
     background-color: var(--grey-secondary);
     font-weight: 600;
 }
-.bg-navbar{
+
+.bg-navbar {
     background-color: var(--white-secondary) !important;
 }
+
 /*---------- Navbat end -------------*/
 
 /*---------- Footer start -------------*/
+footer {
+    background-color: var(--white-secondary);
+}
+
+footer .logo {
+    border-right: 1px var(--grey-primary) solid;
+}
+
+footer .logo .description {
+    color: #000;
+}
+
+footer .title{
+    font-weight: 600;
+}
+
+footer .pages ul, footer .sociale ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+footer .pages ul li, footer .sociale ul li{
+    margin-bottom: 7px;
+}
+footer .pages ul li a, footer .sociale ul li a{
+    text-decoration: none;
+    color: var(--grey-primary);
+    transition: 0.5s;
+}
+footer .pages ul li a:hover, footer .sociale ul li a:hover{
+    color: #000;
+}
+
+@media (max-width: 991px) {
+    footer .logo {
+        border-right: 0px var(--grey-primary) solid;
+    }
+}
 
 /*---------- Footer end -------------*/
+
+
+
+
