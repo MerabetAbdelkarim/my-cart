@@ -1,42 +1,13 @@
-import { Container } from "react-bootstrap";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import FooTer from "./components/FooTer";
-import NavBar from "./components/NavBar";
+import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Container>
-        <div className="mt-">
-          fffffffffffffffffffffffffffffffffffffffffffffffff
-        </div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-        <div>fffffffffffffffffffffffffffffffffffffffffffffffff</div>
-      </Container>
-      <FooTer />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 }
