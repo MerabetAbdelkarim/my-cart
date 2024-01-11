@@ -57,7 +57,6 @@
 .bg-navbar {
     background-color: var(--white-secondary) !important;
 }
-
 /*---------- Navbat end -------------*/
 
 /*---------- Footer start -------------*/
@@ -162,7 +161,6 @@ header .action .nbrs .nbr-1{
         color: white;
         font-size: 50px;
         font-weight: 600;
-        
     }
     header .action {
         margin-top: 90px;
