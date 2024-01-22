@@ -102,6 +102,7 @@ footer .pages ul li a:hover, footer .sociale ul li a:hover{
 
 
 /* ----------Home start------------- */
+/* ----------header ---------------- */
 header{
     background-image: url(assets/home/header.png);
     background-position: center;
@@ -168,5 +169,12 @@ header .action .nbrs .nbr-1{
     header .action .btn1{
         width: 100%;
     }
+}
+
+/* -----------carousel------------ */
+.react-multi-carousel-list ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 /* ----------Home end--------------- */
