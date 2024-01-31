@@ -7,6 +7,7 @@
 :root {
     --grey-primary: #393E46;
     --grey-secondary: #929AAB;
+    --white-primary: #EEEEEE;
     --white-secondary: #F7F7F7;
     --green:#1A5D1A;
 }
@@ -176,5 +177,47 @@ header .action .nbrs .nbr-1{
     display: flex;
     justify-content: center;
     align-items: center; 
+}
+
+/* -----------features-------------- */
+.features .item{
+    padding: 10px;
+
+}
+.features .item .child-item{
+    background-color: var(--white-primary);
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    top: 0px; left: 0px;
+}
+.features .item .child-item:hover{
+    position: relative;
+    top: 2px; left: 2px;
+    transition:  0.7s ease-in-out;
+}
+.features .item .icon{
+    font-size: 80px;
+}
+
+/* -----------motivation-------------- */
+.motivation{
+    padding: 25px;
+    background-color: #FF2E00;
+    border-radius: 10px;
+}
+.motivation .content{
+    height: 100%;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    text-align: left;
+    display: flex;
+    align-items: center ;
+
+}
+.motivation img{
+    width: 100%;
+
 }
 /* ----------Home end--------------- */

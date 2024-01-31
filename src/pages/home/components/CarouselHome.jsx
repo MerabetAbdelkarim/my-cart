@@ -1,12 +1,12 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import appleImg from "../assets/home/brands/apple.svg";
-import chanelImg from "../assets/home/brands/chanel.svg";
-import hpImg from "../assets/home/brands/hp.svg";
-import lacosteImg from "../assets/home/brands/lacoste.svg";
-import nbaImg from "../assets/home/brands/nba.svg";
-import nikeImg from "../assets/home/brands/nike.svg";
-import reebokImg from "../assets/home/brands/reebok.svg";
+import appleImg from "../../../assets/home/brands/apple.svg";
+import chanelImg from "../../../assets/home/brands/chanel.svg";
+import hpImg from "../../../assets/home/brands/hp.svg";
+import lacosteImg from "../../../assets/home/brands/lacoste.svg";
+import nbaImg from "../../../assets/home/brands/nba.svg";
+import nikeImg from "../../../assets/home/brands/nike.svg";
+import reebokImg from "../../../assets/home/brands/reebok.svg";
 import { Container } from "react-bootstrap";
 
 
@@ -28,7 +28,7 @@ function CarouselHome() {
             slidesToSlide: 1 // optional, default to 1.
         }
     };
-  return (
+    return (
 
     <>
         <Container>
