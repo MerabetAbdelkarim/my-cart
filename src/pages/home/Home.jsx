@@ -5,7 +5,7 @@ import CarouselHome from "./components/CarouselHome";
 import Features from "./components/Features";
 import Header from "./components/Header";
 import NewProducts from "./components/NewProducts";
-import Motivation from "./components/motivation";
+import Motivation from "./components/Motivation";
 
 function Home() {
     return (
