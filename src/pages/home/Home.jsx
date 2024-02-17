@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import Header from "./components/Header";
 import NewProducts from "./components/NewProducts";
 import Motivation from "./components/Motivation";
+<<<<<<< HEAD
 import Helmet from "../../components/helmet/Helmet";
 import ProductList from "../../components/UI/ProductList";
 import { Container } from "react-bootstrap";
@@ -12,6 +13,8 @@ import products from "../../assets/data/products";
 import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
 
+=======
+>>>>>>> ca3a6672f7ab09be87252755f062520740a0eeb3
 
 function Home() {
     const [newProduct, setNewProduct] = useState(products)
