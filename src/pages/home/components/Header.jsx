@@ -1,4 +1,6 @@
 import { Button, Col, Container, Row } from "react-bootstrap"
+import { motion } from "framer-motion"
+
 
 
 function Header() {
@@ -11,7 +13,7 @@ function Header() {
                 <div className="action">
                     <Row>
                         <Col className="o-last" md="12" lg="6">
-                            <Button className="btn1">Shop Now</Button>
+                            <motion.Button whileTap={{ scale:1.02}} className="btn1">Shop Now</motion.Button>
                         </Col>
                         <Col className="o-first" md="6" lg="6">
                             <div className="nbrs">

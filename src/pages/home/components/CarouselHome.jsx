@@ -20,7 +20,7 @@ function CarouselHome() {
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 4,
-            slidesToSlide: 2 // optional, default to 1.
+            slidesToSlide: 1 // optional, default to 1.
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -35,12 +35,13 @@ function CarouselHome() {
             <Carousel
                 className="my-5"
                 autoPlay
-                customTransition="all 15s linear"
+                customTransition="all 10s linear 0s"
                 infinite
                 pauseOnHover={false}
                 responsive={responsive}
                 arrows={false}
                 rewind={true}
+                draggable={false}
             >
                 <div className="item">
                     <img src={appleImg} alt="image apple brand" />

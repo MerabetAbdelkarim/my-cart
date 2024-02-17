@@ -1,14 +1,14 @@
-import FooTer from "../../components/FooTer"
-import NavBar from "../../components/NavBar"
+
+import Helmet from "../../components/helmet/Helmet"
+import Test from "../test/Test"
 
 
 function Product() {
   return (
-    <>
-        <NavBar />
+    <Helmet title="Products">
         <h1>Produts</h1>
-        <FooTer />
-    </>
+        <Test/>
+    </Helmet>
   )
 }
 

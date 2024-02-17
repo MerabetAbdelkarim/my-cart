@@ -21,7 +21,7 @@
 
 .logo-navbar span,
 .logo-footer span {
-    color: #000;
+    color: white;
     font-weight: 600;
 }
 
@@ -47,6 +47,30 @@
 }
 
 /*---------- Navbat start -----------*/
+.navbar {
+    transition:  0.4s ease-in-out;
+    background-color: #FFB562;
+}
+.navbar .navbar-nav a{
+    color: white;
+}
+.navbar .m-auto.navbar-nav a{
+    color: white;
+    position: relative;
+}
+.navbar .m-auto.navbar-nav a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 10px;
+    bottom: -2px;
+    transition: all 0.5s;
+}
+.navbar .m-auto.navbar-nav a:hover::after{
+    width: 80%;
+}
 .navbar .nav-link .cart-nbr {
     border-radius: 50%;
     padding-inline: 4px;
@@ -54,23 +78,70 @@
     background-color: var(--grey-secondary);
     font-weight: 600;
 }
+.scrolled {
+    padding: 0px 0;
+}
 
-.bg-navbar {
-    background-color: var(--white-secondary) !important;
+.navbar-toggler{
+    border: 0;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus{
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+.toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #212121;
+    display: block;
+    transition: all 0.5s ease;
+}
+.middle-bar{
+    margin: 5px;
+}
+.navbar-toggler .top-bar{
+    transform: rotate(45deg);
+    transform-origin: 15% 15%;
+}
+.navbar-toggler .middle-bar{
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.navbar-toggler .bottom-bar{
+    transform: rotate(-45deg);
+    transform-origin: 10% 20%;
+}
+.navbar-toggler.collapsed .top-bar{
+    transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar{
+    opacity: 1;
+    filter: alpha(opacity=100);
+} 
+.navbar-toggler.collapsed .bottom-bar{
+    transform: rotate(0);
+} 
+.navbar-toggler.collapsed  .toggler-icon{
+    background-color: #212121;
 }
 /*---------- Navbat end -------------*/
 
 /*---------- Footer start -------------*/
 footer {
-    background-color: var(--white-secondary);
+    margin-top: 10px;
+    background-color: #212121;
+    color: #fbfbfb;
 }
 
 footer .logo {
-    border-right: 1px var(--grey-primary) solid;
+    border-right: 1px white solid;
 }
 
 footer .logo .description {
-    color: #000;
+    color: #ffffff;
 }
 
 footer .title{
@@ -86,11 +157,13 @@ footer .pages ul li, footer .sociale ul li{
 }
 footer .pages ul li a, footer .sociale ul li a{
     text-decoration: none;
-    color: var(--grey-primary);
+    color: white;
     transition: 0.5s;
 }
 footer .pages ul li a:hover, footer .sociale ul li a:hover{
-    color: #000;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow:0px 0px 20px rgb(255, 255, 255);
 }
 
 @media (max-width: 991px) {
@@ -173,6 +246,9 @@ header .action .nbrs .nbr-1{
 }
 
 /* -----------carousel------------ */
+.react-multi-carousel-list{
+    opacity: 0.7;
+}
 .react-multi-carousel-list ul li{
     display: flex;
     justify-content: center;
@@ -182,42 +258,55 @@ header .action .nbrs .nbr-1{
 /* -----------features-------------- */
 .features .item{
     padding: 10px;
-
 }
 .features .item .child-item{
-    background-color: var(--white-primary);
     border-radius: 10px;
     padding: 10px;
-    position: relative;
-    top: 0px; left: 0px;
-}
-.features .item .child-item:hover{
-    position: relative;
-    top: 2px; left: 2px;
-    transition:  0.7s ease-in-out;
-}
-.features .item .icon{
-    font-size: 80px;
 }
 
 /* -----------motivation-------------- */
 .motivation{
     padding: 25px;
-    background-color: #FF2E00;
+    background-color: rgb(208, 72, 72);
     border-radius: 10px;
 }
-.motivation .content{
-    height: 100%;
-    font-size: 40px;
+.motivation .item{
+    font-size: 25px;
     font-weight: 600;
     color: white;
-    text-align: left;
-    display: flex;
-    align-items: center ;
-
 }
-.motivation img{
-    width: 100%;
 
+/* -----------timer-------------- */
+.timer{
+    background-color: rgb(255, 230, 231);
+    color: rgb(0, 0, 0);
 }
+.timer .large{
+    font-weight: 600;
+}
+.timer button{
+    padding: 5px 40px ;
+    border-radius: 15px;
+    border: 1px #0000002a solid;
+    color: #000;
+}
+
 /* ----------Home end--------------- */
+
+.test{
+    background-color: #FED8D8;
+    border-radius: 5px;
+    padding: 0px;
+}
+.test h2{
+    color: #1A5D1A;
+    font-size: 35px;
+    font-weight: 600;
+    margin: 10px;
+}
+.test .btn-down{
+    margin: 10px;
+    .item {
+        align-self: flex-end ;
+      }
+}

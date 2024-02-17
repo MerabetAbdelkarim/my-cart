@@ -3,14 +3,14 @@ import { FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ProductCard from "../../../components/UI/ProductCard";
 
-function NewProducts({ data }) {
+function BestProduct({ data }) {
     const shuffledData = data.sort(() => Math.random() - 0.5);
     const randomFourItems = shuffledData.slice(0, 4);
     return (
         <Container>
             <div className="new-produts my-4">
                 <div className="d-flex justify-content-between">
-                    <h4 className="fw-bold">New Products</h4>
+                    <h4 className="fw-bold">Best Products</h4>
                     <h5 className="fw-bold">
                         <Link className="nav-link" to={'/products'}>See more <FaAngleRight /></Link>
                     </h5>
@@ -26,5 +26,4 @@ function NewProducts({ data }) {
         </Container>
     )
 }
-
-export default NewProducts
+export default BestProduct

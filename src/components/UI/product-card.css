@@ -1,0 +1,10 @@
+.product .product_action .btn-add{
+    padding: 7px 40px;
+    border-radius: 25px;
+    border:0.5px #393e4656 solid !important;
+}
+
+.product .product_action .btn-love{
+    border:none;
+    background: none;
+}

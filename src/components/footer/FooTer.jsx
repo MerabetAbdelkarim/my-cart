@@ -3,6 +3,7 @@ import {  Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function FooTer() {
+    const years = new Date().getFullYear()
     return (
         <footer className="py-3">
             <Container>
@@ -59,7 +60,7 @@ function FooTer() {
                     </Col>
                 </Row>
                 <div className="text-center">
-                © 2024 digital.Shop. All Rights Reserved.
+                © {years} digital.Shop. All Rights Reserved.
                 </div>
             </Container>
         </footer>
