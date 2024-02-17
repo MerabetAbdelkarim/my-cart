@@ -4,9 +4,7 @@ import Features from "./components/Features";
 import Header from "./components/Header";
 import NewProducts from "./components/NewProducts";
 import Motivation from "./components/Motivation";
-<<<<<<< HEAD
 import Helmet from "../../components/helmet/Helmet";
-import ProductList from "../../components/UI/ProductList";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import products from "../../assets/data/products";
