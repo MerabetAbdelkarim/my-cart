@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 function Timer() {
   return (
     <>  
-        <div className="timer my-4">
+        <div className="timer my-4 overflow-hidden">
             <Container>
                 <Row className="text-center justify-content-center">
                     <Col xs={12} sm={9} md={6} lg={4}>
                         <Clock/>
                     </Col>
                 </Row>
-                <Row className="">
+                <Row className="overflow-hidden">
                     <Col className="" xs={6} >
                         <div className="d-flex flex-column justify-content-evenly align-items-baseline h-100">
                             <div className=" small ">

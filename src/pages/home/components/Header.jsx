@@ -6,7 +6,6 @@ import { motion } from "framer-motion"
 function Header() {
     return (
         <>
-        <Container>
             <header>
                 <h2 className="title">Find the best  product for you</h2>
                 <p className="paragraph">Vestibulum tempus imperdiet sem ac porttitor. Vivamus pulvinar commodo orci, suscipit porttitor velit elementum non</p>
@@ -36,7 +35,6 @@ function Header() {
                     </Row>
                 </div>
             </header>
-        </Container>
         </>
     )
 }
