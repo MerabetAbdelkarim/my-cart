@@ -1,4 +1,3 @@
-
 import CarouselHome from "./components/CarouselHome";
 import Features from "./components/Features";
 import Header from "./components/Header";
