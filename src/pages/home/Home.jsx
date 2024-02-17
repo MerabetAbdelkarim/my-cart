@@ -13,9 +13,6 @@ import products from "../../assets/data/products";
 import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
 
-=======
->>>>>>> ca3a6672f7ab09be87252755f062520740a0eeb3
-
 function Home() {
     const [newProduct, setNewProduct] = useState(products)
     const [bestProduct, setBestProduct] = useState(products)
