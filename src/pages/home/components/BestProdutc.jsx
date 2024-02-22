@@ -17,8 +17,8 @@ function BestProduct({ data }) {
                 </div>
                 <Row>
                     {
-                        randomFourItems.map((item) => (
-                            <ProductCard item={item} />
+                        randomFourItems.map((item, index) => (
+                            <ProductCard item={item} key={index}/>
                         ))
                     }
                 </Row>

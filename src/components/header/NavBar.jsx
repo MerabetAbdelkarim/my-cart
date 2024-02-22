@@ -2,8 +2,11 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaUser  } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function NavBar() {
+    const totalQuantity = useSelector(state => state.cart.totalQuantity)
+
     const [scrolled, setScrolled]= useState(false) 
     
     useEffect(()=>{
@@ -37,7 +40,7 @@ function NavBar() {
                             <Link className="nav-link" to="/favorite">Favorite</Link>
                         </Nav>
                         <Nav>
-                            <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">2</span>  </Link>
+                            <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>  </Link>
                             <Link className="nav-link" to="/profile"><FaUser /></Link>
                         </Nav>
                     </Navbar.Collapse>

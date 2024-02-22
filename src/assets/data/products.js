@@ -432,7 +432,7 @@ const products = [
   {
     id: "16",
     productName: "Rolex Watch",
-    imgUrl: productImg19,
+    imgUrl: '',
     category: "watch",
     price: 299,
     shortDesc:
