@@ -5,8 +5,8 @@ import "./products.css";
 function Product() {
   return (
     <Helmet title="Products">
-      <div className="produts">
-        <UpperSection />
+      <div className="products">
+        <UpperSection title={'Products'}/>
       </div>
     </Helmet>
   );

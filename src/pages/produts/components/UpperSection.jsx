@@ -1,7 +1,9 @@
 
-function UpperSection() {
+function UpperSection({title}) {
   return (
-    <div className="upper-section">Products</div>
+    <div className="upper-section">
+        <h1>{title}</h1>
+    </div>
   )
 }
 

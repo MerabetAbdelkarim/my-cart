@@ -22,7 +22,7 @@ function ProductCard({ item }) {
                     <AsyncImage
                         src={item.imgUrl}
                         style={{ width: "100%", height: "auto",borderRadius:'10px', aspectRatio: 16 / 16 }}
-                        loader={<div style={{ background: '#888' }}/>}
+                        loader={<div style={{ background: '#eee' }}/>}
                         error={<div style={{ background: '#eee' }}/>}
                         Transition={props => <Blur radius={10} {...props}/>}
                     />

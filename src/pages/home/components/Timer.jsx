@@ -1,5 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap"
-import image from "../../../assets/images/counter-timer-img.png"
+import image from "../../../assets/home/clock.png"
 import Clock from "../../../components/UI/Clock"
 import { motion } from "framer-motion";
 function Timer() {
