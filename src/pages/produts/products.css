@@ -2,6 +2,16 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --grey-primary: #393E46;
+    --grey-secondary: #929AAB;
+    --white-primary: #EEEEEE;
+    --white-secondary: #F7F7F7;
+    --black-secondary:#212121;
+    --green:#1A5D1A;
+}
+/* ---------upper-section ----------*/
 .products .upper-section{
     padding: 100px ;
     background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../../assets/produts/upper.jpg);
@@ -14,3 +24,42 @@
     color: white;
     font-weight: 600;
 }
+/* ---------upper-section ----------*/
+
+
+/* ---------filter-section ----------*/
+.filter-products select,.sort-products select{
+    background-color: var(--black-secondary);
+    background-image: url("../../assets/produts/arows/arrow-down.png");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
+    color: white;
+    background-size: 12px;
+    padding: 5px 25px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.products .input-search {
+    width: 100%;
+}
+.products .input-search input{
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    padding: 5px 10px;
+    width: 90%;
+}
+.products .input-search  span{
+    /* position: relative; */
+    left: 0px;
+    top: 0;
+}
+
+
+/* ---------filter-section ----------*/
+
+

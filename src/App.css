@@ -9,6 +9,7 @@
     --grey-secondary: #929AAB;
     --white-primary: #EEEEEE;
     --white-secondary: #F7F7F7;
+    --black-secondary:#212121;
     --green:#1A5D1A;
 }
 
@@ -132,7 +133,7 @@
 /*---------- Footer start -------------*/
 footer {
     margin-top: 10px;
-    background-color: #212121;
+    background-color: var(--black-secondary);
     color: #fbfbfb;
 }
 
