@@ -12,17 +12,27 @@
     --green:#1A5D1A;
 }
 /* ---------upper-section ----------*/
-.products .upper-section{
-    padding: 100px ;
+.upper-section{
+    padding: 50px ;
     background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../../assets/produts/upper.jpg);
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.products .upper-section h1{
+.upper-section h1{
+    font-size: 1.8rem;
     color: white;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 768px){
+    .upper-section{
+        padding: 35px ;
+    }
+    .upper-section h1{
+        font-size: 1.4rem;
+    }
 }
 /* ---------upper-section ----------*/
 
@@ -62,4 +72,15 @@
 
 /* ---------filter-section ----------*/
 
+
+/* ---------product-details ---------*/
+
+.product-details h2{
+    font-size: 1.8rem;
+}
+.description .nav-link{
+    color: #000000b6;
+}
+
+/* ---------product-details ---------*/
 

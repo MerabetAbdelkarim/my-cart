@@ -12,7 +12,17 @@
     --black-secondary:#212121;
     --green:#1A5D1A;
 }
-
+a{
+    color: black;
+    text-decoration: none;
+}
+.btn-buy{
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--black-secondary);
+    color: white;
+}
 .logo-navbar,
 .logo-footer {
     color: var(--grey-primary);

@@ -11,7 +11,7 @@ function Product() {
   const [dataProducts, setDataProducts] = useState(data)
 
   const handleFilter = (e) => {
-    const value  = e.target.value;
+    const {value}  = e.target;
     const filteredProducts = data.filter((item) => item.category === value);
     setDataProducts(filteredProducts);
   };
@@ -24,7 +24,6 @@ function Product() {
     setDataProducts(searchedProducts)
   }
 
-  console.log(dataProducts)
   return (
     <Helmet title="Products">
       <div className="products">
@@ -69,9 +68,7 @@ function Product() {
               dataProducts.length === 0 
               ?<h1 className="text-center">No products are found !</h1>
               : <ProductList data={dataProducts} />
-              
             }
-
           </Container>
         </section>
 
