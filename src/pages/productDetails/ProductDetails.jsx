@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import data from "../../assets/data/products.js"
 import "../produts/products.css";
 import UpperSection from "../produts/components/UpperSection.jsx";
@@ -19,7 +19,6 @@ function ProductDetails() {
   const dispatch = useDispatch()
   const reviewUser = useRef('')
   const reviewMsg = useRef('')
-  console.log(reviewMsg)
 
 
   const product = data.find((item) => item.id === id)
@@ -31,12 +30,35 @@ function ProductDetails() {
   
   const addToCart = () => {
     dispatch(addItem(product))
-    toast.success('product added to cart')
+    toast.success('Product added to cart')
   }
 
   const relatedProducts= data.filter((item)=>item.category===category)
-  return (
+  
+  const handlerSubmit = (e)=>{
+    e.preventDefault();
 
+    const reviewUserName = reviewUser.current.value;
+    const reviewUserMsg = reviewMsg.current.value;
+
+    console.log(reviewUserName, rating, reviewUserMsg)
+    
+    const reviewObj= {
+      userName: reviewUserName,
+      text: reviewUserName,
+      rating
+    }
+    toast.success('Review submitted')
+    reviewUser.current.value=''
+    reviewMsg.current.value=''
+    setRating(null)
+  }
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[product])
+
+  return (
     <div>
       <Container className="mb-5">
         <UpperSection title={`${productName}`} />
@@ -61,7 +83,7 @@ function ProductDetails() {
                   <div>(<span style={{ color: 'orange' }}>{avgRating}</span> ratings)</div>
                 </div>
                 <span className="product-price pb-2 fs-5">${price}</span>
-                <span>Cate</span>
+                <span> Category: {category}</span>
                 <p> {shortDesc} </p>
                 <motion.button
                   whileHover={{ scale: 1.1 }} onClick={addToCart}
@@ -101,29 +123,29 @@ function ProductDetails() {
                     <h4>Leave your experience</h4>
                     <Form action="">
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control ref={reviewUser} type="text" placeholder="Enter name" />
+                        <Form.Control required ref={reviewUser} type="text" placeholder="Enter name" />
                       </Form.Group>
                       <Form.Group className="mb-3 ms-3 d-flex align-items-center gap-3" controlId="formBasicEmail">
-                        <span onClick={() => setRating(1)}>
+                        <motion.span whileHover={{scale: 1.1}} whileTap={{scale: 1.2}} className="icon" onClick={() => setRating(1)}>
                           1 <IoIosStar color="orange" />
-                        </span>
-                        <span onClick={() => setRating(2)}>
+                        </motion.span>
+                        <motion.span whileHover={{scale: 1.1}} whileTap={{scale: 1.2}} className="icon"  onClick={() => setRating(2)}>
                           2 <IoIosStar color="orange" />
-                        </span>
-                        <span onClick={() => setRating(3)}>
+                        </motion.span>
+                        <motion.span whileHover={{scale: 1.1}} whileTap={{scale: 1.2}} className="icon" onClick={() => setRating(3)}>
                           3 <IoIosStar color="orange" />
-                        </span>
-                        <span onClick={() => setRating(4)}>
+                        </motion.span>
+                        <motion.span whileHover={{scale: 1.1}} whileTap={{scale: 1.2}} className="icon" onClick={() => setRating(4)}>
                           4 <IoIosStar color="orange" />
-                        </span>
-                        <span onClick={() => setRating(5)}>
+                        </motion.span>
+                        <motion.span whileHover={{scale: 1.1}} whileTap={{scale: 1.2}} className="icon" onClick={() => setRating(5)}>
                           5 <IoIosStar color="orange" />
-                        </span>
+                        </motion.span>
                       </Form.Group>
                       <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control ref={reviewMsg} as="textarea" rows={3} placeholder="Review Message" />
+                        <Form.Control required ref={reviewMsg} as="textarea" rows={3} placeholder="Review Message" />
                       </Form.Group>
-                      <motion.button whileHover={{ scale: 1.1 }} type="submit" className="btn-buy">Submit</motion.button>
+                      <motion.button whileHover={{ scale: 1.1 }} type="submit" className="btn-buy" onClick={handlerSubmit}>Submit</motion.button>
                     </Form>
                   </div>
                 </Tab>

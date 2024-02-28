@@ -30,8 +30,8 @@ function Product() {
         <UpperSection title={'Products'} />
         <section className="fiters">
           <Container>
-            <Row>
-              <Col md={3}>
+            <Row className="justify-content-between">
+              <Col md={5} lg={3}>
                 <div className="filter-products">
                   <select onChange={handleFilter}>
                     <option hidden>Filter by category</option>
@@ -43,7 +43,7 @@ function Product() {
                   </select>
                 </div>
               </Col>
-              <Col md={3}>
+              <Col md={4} lg={3}>
                 <div className="sort-products">
                   <select >
                     <option hidden>Sort by</option>
@@ -52,7 +52,7 @@ function Product() {
                   </select>
                 </div>
               </Col>
-              <Col md={6}>
+              <Col md={12} lg={6}>
                 <div className="input-search">
                   <input type="text" onChange={handeSearch} placeholder="Search" />
                   <span><CiSearch /></span>
