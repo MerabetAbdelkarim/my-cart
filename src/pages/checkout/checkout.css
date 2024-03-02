@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --grey-primary: #393e46;
+    --grey-secondary: #929aab;
+    --white-primary: #eeeeee;
+    --white-secondary: #f7f7f7;
+    --black-secondary: #212121;
+    --green: #1a5d1a;
+}
+
+.card-payment {
+    width: 100%;
+    background-color: var(--black-secondary);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+.btn-checkout{
+    background-color: white;
+    width: 100%;
+    padding: 5px;
+    border: none;
+}
