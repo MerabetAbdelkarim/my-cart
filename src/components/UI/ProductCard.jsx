@@ -19,7 +19,7 @@ function ProductCard({ item }) {
     return (
         <Col md={6} lg={3}>
             <div className="product">
-                <Link to={`/product-details/${item.id}`}>
+                <Link to={`/product/${item.id}`}>
                     <motion.div whileHover={{ scale: 0.9 }} className="product_image">
                         <AsyncImage
                             src={item.imgUrl}

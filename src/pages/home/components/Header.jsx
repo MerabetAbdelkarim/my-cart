@@ -1,5 +1,6 @@
-import { Button, Col, Container, Row } from "react-bootstrap"
+import { Col, Row } from "react-bootstrap"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 
 
@@ -12,7 +13,7 @@ function Header() {
                 <div className="action">
                     <Row>
                         <Col className="o-last" md="12" lg="6">
-                            <motion.Button whileTap={{ scale:1.02}} className="btn1">Shop Now</motion.Button>
+                            <motion.button whileTap={{ scale: 1.02 }} className="btn1"><Link to={"/products"}>Shop Now</Link></motion.button>
                         </Col>
                         <Col className="o-first" md="6" lg="6">
                             <div className="nbrs">

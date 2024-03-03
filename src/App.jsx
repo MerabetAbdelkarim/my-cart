@@ -1,13 +1,14 @@
 
 import "./App.css";
-import Layout from "./components/layout/Layout";
 import { Analytics } from "@vercel/analytics/react"
+import Routers from "./routers/Routers";
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (
     <>
-        <Layout/>
-        <Analytics/>
+      <Routers />
+      <Analytics />
     </>
   );
 }

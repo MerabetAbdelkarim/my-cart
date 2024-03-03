@@ -1,15 +1,14 @@
+
 import FooTer from "../footer/FooTer"
 import NavBar from "../header/NavBar"
-import Routers from "../../routers/Routers"
+import { Outlet } from "react-router-dom"
 
 function Layout() {
   return (
     <>
-        <NavBar/>
-        <div>
-            <Routers/>
-        </div>
-        <FooTer/>
+      <NavBar />
+      <Outlet />
+      <FooTer />
     </>
   )
 }
