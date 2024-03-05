@@ -6,8 +6,8 @@ import './checkout.css'
 import { useSelector } from "react-redux"
 
 function Checkout() {
-  const totalQuantity =useSelector((state)=>state.cart.totalQuantity)
-  const totalAmount =useSelector((state)=>state.cart.totalAmount)
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity)
+  const totalAmount = useSelector((state) => state.cart.totalAmount)
   return (
     <>
       <Helmet title={'Checkout'}>
@@ -37,7 +37,7 @@ function Checkout() {
                 <h5 className="d-flex justify-content-between"><div>Total Cost </div> <div>${totalAmount}</div></h5>
                 <br />
                 <button className="btn-checkout">
-                  <Link to={"/"}>Checkout</Link>
+                  <Link to={"/authentication"}>Checkout</Link>
                 </button>
               </div>
             </Col>
