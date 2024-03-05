@@ -6,8 +6,8 @@ import { useEffect } from "react"
 function useAuth() {
     const [currentUser, setCurrentUser] = useState({})
 
-    useEffect(()=>{
-        onAuthStateChanged(auth,(user)=>{
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
             if (user) {
                 setCurrentUser(user)
             } else {

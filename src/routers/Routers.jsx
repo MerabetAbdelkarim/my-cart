@@ -9,6 +9,7 @@ import Checkout from "../pages/checkout/Checkout";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import Layout from "../components/layout/Layout";
 import Auth from "../pages/Authentication/Auth";
+import ProtectedRoute from "./ProtectedRoute";
 
 function Routers() {
   return (
@@ -21,7 +22,13 @@ function Routers() {
           <Route path="/favorite" element={<Favorite />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<User />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            } />
           <Route path="/product/:id" element={<ProductDetails />} />
         </Route>
         <Route path="/authentication" element={<Auth />} />
@@ -31,3 +38,4 @@ function Routers() {
 }
 
 export default Routers
+
