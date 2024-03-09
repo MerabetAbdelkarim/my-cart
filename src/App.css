@@ -170,6 +170,27 @@ a {
     background-color: #212121;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute;
+        left: -250%;
+        background-color: #FFB562;
+        border: none;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .navbar-expand-md .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: #FFB562;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        color: white;
+    }
+}
+
 /*---------- Navbat end -------------*/
 
 /*---------- Footer start -------------*/
@@ -308,7 +329,8 @@ header .action .nbrs .nbr-1 {
         width: 100%;
         color: white !important;
     }
-    header .action .btn1  a{
+
+    header .action .btn1 a {
         color: white !important;
     }
 }

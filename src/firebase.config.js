@@ -11,12 +11,12 @@ const firebaseConfig = {
     // storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
     // messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_ID,
     // appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    apiKey: 'AIzaSyCzt3h-Zc6aHW3TsrFTuziT45OZNBUNgp0',
-    authDomain: 'digitalshop-9446a.firebaseapp.com',
-    projectId: 'digitalshop-9446a',
-    storageBucket: 'digitalshop-9446a.appspot.com',
-    messagingSenderId: '758725938589',
-    appId: '1:758725938589:web:7fe996b5b6bc9f765f3374',
+    apiKey: "AIzaSyBrlSce6_9UYOWUfKUasyxzBH1_duU616s",
+    authDomain: "project-my-cart.firebaseapp.com",
+    projectId: "project-my-cart",
+    storageBucket: "project-my-cart.appspot.com",
+    messagingSenderId: "875429046091",
+    appId: "1:875429046091:web:a181746e4f904c91ee6ace"
 };
 
 const app = initializeApp(firebaseConfig);
