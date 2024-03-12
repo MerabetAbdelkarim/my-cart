@@ -7,6 +7,7 @@ import useAuth from "../../custome-hooks/useAuth"
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { toast } from "react-toastify";
+import imageProfile from "../../assets/auth/profile.webp"
 
 
 function NavBar() {
@@ -16,7 +17,9 @@ function NavBar() {
 
     const { currentUser } = useAuth()
     const user = currentUser
+    console.log('navbar user : ', user)
     const navigate = useNavigate()
+
     const logout = () => {
         signOut(auth).then(() => {
             toast.success('Logged out')
@@ -55,10 +58,9 @@ function NavBar() {
                             <Link className="nav-link" to="/about">About us</Link>
                             <Link className="nav-link" to="/favorite">Favorite</Link>
                         </Nav>
-                        <Nav>
+                        <Nav className="align-items-center">
                             <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>  </Link>
-                            <NavDropdown className="" title={user ? <img src={user.photoURL} width={'25px'} className=" rounded-circle" /> : <FaUser />} id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown className="" title={user ? <img style={{ objectFit: "cover" }} src={user.photoURL} width={'35px'} height={'35px'} className=" rounded-circle" /> : <img style={{ objectFit: "cover" }} src={imageProfile} width={'35px'} height={'35px'} className=" rounded-circle" />} id="basic-nav-dropdown">
                                 {
                                     user
                                         ?

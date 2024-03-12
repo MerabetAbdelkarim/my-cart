@@ -5,14 +5,17 @@ import './auth.css'
 import { createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 
-import { auth, storage, db } from "../../firebase.config";
+import { auth, db } from "../../firebase.config";
 import { setDoc, doc } from "firebase/firestore";
 
 import { toast } from "react-toastify"
 import AnimationLoanding from "../../components/UI/AnimationLoanding";
 
+import { getStorage } from "firebase/storage";
 
 function Auth() {
+
+
   const [rPanel, setRPanel] = useState(false)
 
   const navigate = useNavigate()
@@ -26,9 +29,12 @@ function Auth() {
   const [emailSiginin, setEmailSiginin] = useState('')
   const [passwordSiginin, setPasswordSiginin] = useState('')
 
+
   const signUp = async (e) => {
     e.preventDefault()
     setLoading(true)
+    console.log('loading', loading)
+
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -36,33 +42,94 @@ function Auth() {
         passwordSignup
       )
 
-      const storageRef = ref(storage, `images/${Date.now() + name}`)
-      const uploadTask = uploadBytesResumable(storageRef, file)
-      uploadTask.on((error) => {
-        toast.error(error.message)
-      }, () => {
-        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-          //update user profile
-          await updateProfile(user, {
-            displayName: name,
-            photoURL: downloadURL,
-          });
-          //stor user data in firestor database
-          await setDoc(doc(db, "users", user.uid), {
-            uid: user.uid,
-            displayName: name,
-            emaiSignup,
-            photoURL: downloadURL,
-          })
-        })
-      })
       const user = userCredential.user;
+      console.log('befor user auth :', user)
+      const storage = getStorage();
+      const storageRef = ref(storage, `images/${Date.now() + name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      // Listen for state changes, errors, and completion of the upload.
+      uploadTask.on('state_changed',
+        (snapshot) => {
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          switch (snapshot.state) {
+            case 'paused':
+              console.log('Upload is paused');
+              break;
+            case 'running':
+              console.log('Upload is running');
+              break;
+          }
+        },
+        (error) => {
+          // A full list of error codes is available at
+          // https://firebase.google.com/docs/storage/web/handle-errors
+          switch (error.code) {
+            case 'storage/unauthorized':
+              // User doesn't have permission to access the object
+              break;
+            case 'storage/canceled':
+              // User canceled the upload
+              break;
+
+            // ...
+
+            case 'storage/unknown':
+              // Unknown error occurred, inspect error.serverResponse
+              break;
+          }
+        },
+        () => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(user, {
+              displayName: name,
+              photoURL: downloadURL,
+            })
+            console.log('File available at', downloadURL);
+            await setDoc(doc(db, "user", user.uid), {
+              uid: user.uid,
+              displayName: name,
+              emaiSignup,
+              photoURL: downloadURL
+            })
+          });
+          console.log('after user auth :', user)
+        }
+      );
+
+      // uploadTask.on(
+      //   (error) => {
+      //     toast.error(error.message)
+      //   },
+      //   // () => {
+      //   //   getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+      //   //     //update user profile
+      //   //     await updateProfile(user, {
+      //   //       displayName: name,
+      //   //       photoURL: downloadURL,
+      //   //     })
+
+      //   //     //stor user data in fire store database
+      //   //     await setDoc(doc(db, "user", user.uid), {
+      //   //       uid: user.uid,
+      //   //       displayName: name,
+      //   //       emaiSignup,
+      //   //       // photoURL: downloadURL
+      //   //     })
+      //   //   })
+      //   // }
+      // )
+
       setLoading(false)
       toast.success('Acount creacted')
       setRPanel(false)
 
     } catch (error) {
       setLoading(false)
+      console.log(error)
       toast.error('something went wrong')
     }
   }
@@ -94,6 +161,7 @@ function Auth() {
     e.preventDefault()
     rPanel ? setRPanel(false) : setRPanel(true)
   }
+
   return (
     <>
       <Helmet title={rPanel ? 'Singn up' : 'Login'}>
@@ -108,7 +176,7 @@ function Auth() {
                     <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
                     <input type="email" placeholder="Email" onChange={(e) => setEmailSignup(e.target.value)} />
                     <input type="password" placeholder="Password" onChange={(e) => setPasswordSignup(e.target.value)} />
-                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+                    <input type="file" accept="jpg" onChange={(e) => setFile(e.target.files[0])} />
                     <button className="btn-sing" type="submit">Sign Up</button>
                     <div className="mt-2 d-sm-none">
                       You have an account?
