@@ -14,6 +14,7 @@ import AllProducts from "../admin/AllProducts";
 import AddProducts from "../admin/AddProducts";
 import Dashboard from "../admin/Dashboard";
 import DashboardLayout from "../components/layout/DashboardLayout";
+import Users from "../admin/Users";
 
 function Routers() {
   return (
@@ -36,6 +37,7 @@ function Routers() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard/all-products" element={<AllProducts />} />
             <Route path="/dashboard/add-products" element={<AddProducts />} />
+            <Route path="/dashboard/users" element={<Users />} />
           </Route>
         </Route>
         <Route path="/authentication" element={<Auth />} />

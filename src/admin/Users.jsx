@@ -5,11 +5,11 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 
-function AllProducts() {
-    const { data: productsData, loading } = useGetData('products')
+function Users() {
+    const { data: productsData, loading } = useGetData('user')
 
     const deleteProduct = async (id) => {
-        await deleteDoc(doc(db, "products", id));
+        await deleteDoc(doc(db, "user", id));
         toast.success('Product has been deleted!')
     }
 
@@ -23,19 +23,18 @@ function AllProducts() {
                             <thead>
                                 <tr>
                                     <th>Image</th>
-                                    <th>Title</th>
-                                    <th className="text-right">Category</th>
-                                    <th className="text-right">Price</th>
+                                    <th>Name</th>
+                                    <th className="text-right">Email</th>
                                     <th className="text-right">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                    productsData?.map((product, index) => (
+                                    productsData?.map((user, index) => (
                                         <tr className="item-row" key={index}>
                                             <td>
                                                 <img
-                                                    src={product.imgUrl}
+                                                    src={user?.photoURL}
                                                     width={"80px"}
                                                     height={"60px"}
                                                     alt=""
@@ -43,13 +42,12 @@ function AllProducts() {
                                             </td>
                                             <td>
                                                 <p>
-                                                    <strong>{product.title}</strong>
+                                                    <strong>{user.displayName}</strong>
                                                 </p>
                                             </td>
-                                            <td className="text-right">{product.category}</td>
-                                            <td className="text-right">${product.price}</td>
+                                            <td className="text-right">{user.emaiSignup}</td>
                                             <td className="text-right">
-                                                <Button variant="danger" onClick={() => { deleteProduct(product.id) }}>
+                                                <Button variant="danger" onClick={() => { deleteProduct(user.id) }}>
                                                     delete
                                                 </Button>
                                             </td>
@@ -67,4 +65,4 @@ function AllProducts() {
     )
 }
 
-export default AllProducts
+export default Users
