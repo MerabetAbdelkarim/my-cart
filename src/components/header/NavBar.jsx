@@ -60,7 +60,7 @@ function NavBar() {
                         </Nav>
                         <Nav className="align-items-center">
                             <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>  </Link>
-                            <NavDropdown className="" title={user ? <img style={{ objectFit: "cover" }} src={user.photoURL} width={'35px'} height={'35px'} className=" rounded-circle" /> : <img style={{ objectFit: "cover" }} src={imageProfile} width={'35px'} height={'35px'} className=" rounded-circle" />} id="basic-nav-dropdown">
+                            <NavDropdown className="" title={user ? <img style={{ objectFit: "cover" }} src={user?.photoURL} width={'35px'} height={'35px'} className=" rounded-circle" /> : <img style={{ objectFit: "cover" }} src={imageProfile} width={'35px'} height={'35px'} className=" rounded-circle" />} id="basic-nav-dropdown">
                                 {
                                     user
                                         ?
@@ -68,9 +68,14 @@ function NavBar() {
                                             <h6>logout</h6>
                                         </NavDropdown.Item>
                                         :
-                                        <NavDropdown.Item>
-                                            <Link to={'/authentication'}>Connect</Link>
-                                        </NavDropdown.Item>
+                                        <>
+                                            <NavDropdown.Item>
+                                                <Link to={'/authentication'}>Connect</Link>
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item>
+                                                <Link to={'/dashboard'}>Dashboard</Link>
+                                            </NavDropdown.Item>
+                                        </>
                                 }
                             </NavDropdown>
                         </Nav>

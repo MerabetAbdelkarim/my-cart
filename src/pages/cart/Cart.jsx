@@ -13,7 +13,7 @@ function Cart() {
 
   return (
     <Helmet title="Cart">
-      <div className="cart"> 
+      <div className="cart">
         <div className="container">
           <UpperSection title={"Shopping Cart"} />
           {cartItems.length == 0 ? (

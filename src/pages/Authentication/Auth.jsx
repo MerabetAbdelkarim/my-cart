@@ -29,7 +29,6 @@ function Auth() {
   const [emailSiginin, setEmailSiginin] = useState('')
   const [passwordSiginin, setPasswordSiginin] = useState('')
 
-
   const signUp = async (e) => {
     e.preventDefault()
     setLoading(true)
@@ -48,7 +47,6 @@ function Auth() {
       const storageRef = ref(storage, `images/${Date.now() + name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
-      // Listen for state changes, errors, and completion of the upload.
       uploadTask.on('state_changed',
         (snapshot) => {
           // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
@@ -99,29 +97,6 @@ function Auth() {
           console.log('after user auth :', user)
         }
       );
-
-      // uploadTask.on(
-      //   (error) => {
-      //     toast.error(error.message)
-      //   },
-      //   // () => {
-      //   //   getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-      //   //     //update user profile
-      //   //     await updateProfile(user, {
-      //   //       displayName: name,
-      //   //       photoURL: downloadURL,
-      //   //     })
-
-      //   //     //stor user data in fire store database
-      //   //     await setDoc(doc(db, "user", user.uid), {
-      //   //       uid: user.uid,
-      //   //       displayName: name,
-      //   //       emaiSignup,
-      //   //       // photoURL: downloadURL
-      //   //     })
-      //   //   })
-      //   // }
-      // )
 
       setLoading(false)
       toast.success('Acount creacted')
