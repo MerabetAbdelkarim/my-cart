@@ -1,29 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Helmet from "../../components/helmet/Helmet";
 import UpperSection from "./components/UpperSection";
 import "./products.css";
 import { CiSearch } from "react-icons/ci";
 import ProductList from "../../components/UI/ProductList";
-import data from "../../assets/data/products.js"
+import useGetData from "../../custome-hooks/useGetData";
 
 function Product() {
-  const [dataProducts, setDataProducts] = useState(data)
-
+  const { data: products } = useGetData('products')
+  console.log('products : ', products)
+  const [dataProducts, setDataProducts] = useState()
+  console.log('dataProducts : ', dataProducts)
   const handleFilter = (e) => {
-    const {value}  = e.target;
-    const filteredProducts = data.filter((item) => item.category === value);
+    const { value } = e.target;
+    const filteredProducts = products?.filter((item) => item.category === value);
     setDataProducts(filteredProducts);
   };
-  
-  const handeSearch = (e)=>{
+
+  const handeSearch = (e) => {
     const searchTerm = e.target.value;
-    const searchedProducts = data
-    .filter(item=>item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+    const searchedProducts = products?.filter(item => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
 
     setDataProducts(searchedProducts)
   }
-
+  useEffect(() => {
+    if (products) {
+      setDataProducts(products); // Update state with fetched data
+    }
+  }, [products]);
   return (
     <Helmet title="Products">
       <div className="products">
@@ -65,9 +70,9 @@ function Product() {
         <section className="products-content mb-4">
           <Container>
             {
-              dataProducts.length === 0 
-              ?<h1 className="text-center">No products are found !</h1>
-              : <ProductList data={dataProducts} />
+              dataProducts?.length === 0
+                ? <h1 className="text-center">No products are found !</h1>
+                : <ProductList data={dataProducts} />
             }
           </Container>
         </section>

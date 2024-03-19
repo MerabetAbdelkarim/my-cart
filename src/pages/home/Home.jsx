@@ -6,29 +6,26 @@ import Motivation from "./components/Motivation";
 import Helmet from "../../components/helmet/Helmet";
 import { Container } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import products from "../../assets/data/products";
+// import products from "../../assets/data/products";
 import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
+import useGetData from "../../custome-hooks/useGetData";
 
 function Home() {
-    const [newProduct, setNewProduct] = useState(products)
-    const [bestProduct, setBestProduct] = useState(products)
-    useEffect(()=>{
-        const filterdNewProduct = newProduct.filter(item => item.category === 'watch')
-        setNewProduct(filterdNewProduct)
-        const filterdbestProduct = bestProduct.filter(item => item.category === 'chair')
-        setBestProduct(filterdbestProduct)
-    },[] )
+    const { data: products } = useGetData('products')
+    const newProduct = products?.filter(item => item?.category === 'mobile')
+    const bestProduct = products?.filter(item => item?.category === 'chair')
+
     return (
-        <Helmet  title="Home">
+        <Helmet title="Home">
             <Container>
                 <Header />
                 <CarouselHome />
                 <Features />
-                <NewProducts data={newProduct}/>
-                <BestProduct data={bestProduct}/>
+                <NewProducts data={newProduct} />
+                <BestProduct data={bestProduct} />
             </Container>
-                <Timer/>
+            <Timer />
             <Container>
                 <Motivation />
             </Container>

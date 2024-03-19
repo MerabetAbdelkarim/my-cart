@@ -43,7 +43,7 @@ function AllProducts() {
                                             </td>
                                             <td>
                                                 <p>
-                                                    <strong>{product.title}</strong>
+                                                    <strong>{product.productName}</strong>
                                                 </p>
                                             </td>
                                             <td className="text-right">{product.category}</td>

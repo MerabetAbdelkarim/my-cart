@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import ProductCard from "../../../components/UI/ProductCard";
 
 function NewProducts({ data }) {
-    const shuffledData = data.sort(() => Math.random() - 0.5);
-    const randomFourItems = shuffledData.slice(0, 4);
+    const shuffledData = data?.sort(() => Math.random() - 0.5);
+    const randomFourItems = shuffledData?.slice(0, 4);
     return (
         <Container>
             <div className="new-produts my-4">
@@ -17,7 +17,7 @@ function NewProducts({ data }) {
                 </div>
                 <Row>
                     {
-                        randomFourItems.map((item, index) => (
+                        randomFourItems?.map((item, index) => (
                             <ProductCard item={item} key={index} />
                         ))
                     }

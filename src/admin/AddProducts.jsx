@@ -64,7 +64,7 @@ function AddProducts() {
                 () => {
                     getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
                         await addDoc(docRef, {
-                            title: enterTitle,
+                            productName: enterTitle,
                             shortDesc: enterShortDesc,
                             description: enterDescription,
                             category: enterCategory,
@@ -116,6 +116,7 @@ function AddProducts() {
                                         <div className="form-group">
                                             <label htmlFor="InputCategory">Category</label>
                                             <select className="w-100 p-2 rounded" id="InputCategory" required value={enterCategory} onChange={e => setEnterCategory(e.target.value)}>
+                                                <option >Select category</option>
                                                 <option value={'chair'}>Chair</option>
                                                 <option value={'sofa'}>Sofa</option>
                                                 <option value={'mobile'}>Mobile</option>
