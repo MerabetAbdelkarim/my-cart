@@ -7,7 +7,9 @@ import Helmet from "../../components/helmet/Helmet";
 
 
 function Cart() {
+
   const cartItems = useSelector((state) => state.cart.cartItems);
+  console.log('cartItems : ',cartItems)
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 

@@ -4,8 +4,6 @@
     background: linear-gradient(to right, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border: none;
-    width: '100%';
-    margin:'10px';
 }
 
 .ultra-voilet {
@@ -14,8 +12,6 @@
     background: linear-gradient(to right, #eaafc8, #654ea3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border: none;
-    width: '100%';
-    margin:'10px';
 }
 
 .pink-moon {
@@ -24,8 +20,6 @@
     background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border: none;
-    width: '100%';
-    margin:'10px';
 }
 
 .cool-blues {
@@ -34,6 +28,4 @@
     background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #fff;
     border: none;
-    width: '100%';
-    margin:'10px';
 }

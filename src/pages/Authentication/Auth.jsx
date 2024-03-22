@@ -42,7 +42,6 @@ function Auth() {
       )
 
       const user = userCredential.user;
-      console.log('befor user auth :', user)
       const storage = getStorage();
       const storageRef = ref(storage, `images/${Date.now() + name}`);
       const uploadTask = uploadBytesResumable(storageRef, file);
@@ -86,7 +85,6 @@ function Auth() {
               displayName: name,
               photoURL: downloadURL,
             })
-            console.log('File available at', downloadURL);
             await setDoc(doc(db, "user", user.uid), {
               uid: user.uid,
               displayName: name,
@@ -94,7 +92,6 @@ function Auth() {
               photoURL: downloadURL
             })
           });
-          console.log('after user auth :', user)
         }
       );
 
@@ -121,7 +118,7 @@ function Auth() {
       const user = userCredential.user;
       setLoading(false)
       toast.success('Successfully logged in')
-      navigate('/checkout')
+      navigate(-1)
     } catch (error) {
       setLoading(false)
       toast.error('something went wrong')

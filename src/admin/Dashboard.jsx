@@ -4,7 +4,6 @@ import { AiOutlineDollar, AiOutlineFileDone } from "react-icons/ai";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import './style/dashboard.css'
 import useGetData from "../custome-hooks/useGetData";
-import { useEffect, useState } from "react";
 
 function Dashboard() {
   const { data: user } = useGetData('user')
@@ -45,7 +44,7 @@ function Dashboard() {
       <Row className="mt-2">
         {
           cards.map((item, index) => (
-            <Col key={index} xs={12} sm={6} md={6} lg={3}  >
+            <Col className="p-2" key={index} xs={12} sm={6} md={6} lg={3}  >
               <Card className={item.bg}>
                 <Card.Body>
                   <Row>

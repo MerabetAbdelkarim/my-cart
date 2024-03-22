@@ -5,8 +5,6 @@ import NewProducts from "./components/NewProducts";
 import Motivation from "./components/Motivation";
 import Helmet from "../../components/helmet/Helmet";
 import { Container } from "react-bootstrap";
-import { useEffect, useState } from "react";
-// import products from "../../assets/data/products";
 import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
 import useGetData from "../../custome-hooks/useGetData";

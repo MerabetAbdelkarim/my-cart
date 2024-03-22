@@ -9,9 +9,7 @@ import useGetData from "../../custome-hooks/useGetData";
 
 function Product() {
   const { data: products } = useGetData('products')
-  console.log('products : ', products)
   const [dataProducts, setDataProducts] = useState()
-  console.log('dataProducts : ', dataProducts)
   const handleFilter = (e) => {
     const { value } = e.target;
     const filteredProducts = products?.filter((item) => item.category === value);

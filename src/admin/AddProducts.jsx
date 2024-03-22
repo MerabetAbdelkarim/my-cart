@@ -77,7 +77,6 @@ function AddProducts() {
             toast.success("product successfully added!")
             navigate('/dashboard/all-products')
             setLoading(false)
-
         } catch (error) {
             toast.error('product not added!')
         }

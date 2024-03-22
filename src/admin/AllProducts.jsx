@@ -57,13 +57,10 @@ function AllProducts() {
                                     ))
                                 }
                             </tbody>
-
                         </table>
                 }
-
             </div>
         </Container>
-
     )
 }
 

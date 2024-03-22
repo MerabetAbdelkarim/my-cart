@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import useAuth from "../../custome-hooks/useAuth"
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { toast } from "react-toastify";
 import imageProfile from "../../assets/auth/profile.webp"
-
 
 function NavBar() {
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
@@ -17,7 +16,6 @@ function NavBar() {
 
     const { currentUser } = useAuth()
     const user = currentUser
-    console.log('navbar user : ', user)
     const navigate = useNavigate()
 
     const logout = () => {
@@ -53,27 +51,29 @@ function NavBar() {
                     </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
-                            <Link className="nav-link koko" to="/">Home</Link>
+                            <Link className="nav-link" to="/">Home</Link>
                             <Link className="nav-link" to="/products">Products</Link>
                             <Link className="nav-link" to="/about">About us</Link>
                             <Link className="nav-link" to="/favorite">Favorite</Link>
                         </Nav>
-                        <Nav className="align-items-center">
+                        <Nav className="d-flex">
                             <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>  </Link>
                             <NavDropdown className="" title={user ? <img style={{ objectFit: "cover" }} src={user?.photoURL} width={'35px'} height={'35px'} className=" rounded-circle" /> : <img style={{ objectFit: "cover" }} src={imageProfile} width={'35px'} height={'35px'} className=" rounded-circle" />} id="basic-nav-dropdown">
                                 {
                                     user
                                         ?
-                                        <NavDropdown.Item onClick={logout}>
-                                            <h6>logout</h6>
-                                        </NavDropdown.Item>
+                                        <>
+                                            <NavDropdown.Item>
+                                                <Link to={'/dashboard'}>Dashboard</Link>
+                                            </NavDropdown.Item>
+                                            <NavDropdown.Item onClick={logout}>
+                                                <h6>logout</h6>
+                                            </NavDropdown.Item>
+                                        </>
                                         :
                                         <>
                                             <NavDropdown.Item>
                                                 <Link to={'/authentication'}>Connect</Link>
-                                            </NavDropdown.Item>
-                                            <NavDropdown.Item>
-                                                <Link to={'/dashboard'}>Dashboard</Link>
                                             </NavDropdown.Item>
                                         </>
                                 }
