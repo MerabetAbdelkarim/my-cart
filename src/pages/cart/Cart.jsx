@@ -1,17 +1,24 @@
 import { MdDeleteOutline } from "react-icons/md";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import UpperSection from "../produts/components/UpperSection";
 import Helmet from "../../components/helmet/Helmet";
+import { deleteItem } from "../../redux/slices/cartSlice";
+import { toast } from "react-toastify";
+
 
 
 function Cart() {
-
   const cartItems = useSelector((state) => state.cart.cartItems);
-  console.log('cartItems : ',cartItems)
+  console.log('cartItems : ', cartItems)
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const dispatch = useDispatch()
+  const deleteToCart = ({ item }) => {
+    dispatch(deleteItem(item))
+    toast.success('product daleted!')
+  }
 
   return (
     <Helmet title="Cart">
@@ -53,7 +60,12 @@ function Cart() {
                       <td className="text-right">{item.quantity} items</td>
                       <td className="text-right">${item.price}</td>
                       <td className="text-right">
-                        <button className="btn-delete">
+                        <button
+                          className="btn-delete"
+                          onClick={() => {
+                            dispatch(deleteItem(item))
+                            toast.warning('product deleted!')
+                          }}>
                           <MdDeleteOutline color="red" />
                         </button>
                       </td>

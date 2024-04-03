@@ -6,8 +6,12 @@ import "./products.css";
 import { CiSearch } from "react-icons/ci";
 import ProductList from "../../components/UI/ProductList";
 import useGetData from "../../custome-hooks/useGetData";
+import { useSelector } from "react-redux";
 
 function Product() {
+  const favoriteItems = useSelector((state) => state.favorite.favoriteItems);
+  console.log('favorite Items : ', favoriteItems)
+
   const { data: products } = useGetData('products')
   const [dataProducts, setDataProducts] = useState()
   const handleFilter = (e) => {
@@ -31,6 +35,7 @@ function Product() {
     <Helmet title="Products">
       <div className="products">
         <UpperSection title={'Products'} />
+        
         <section className="fiters">
           <Container>
             <Row className="justify-content-between">

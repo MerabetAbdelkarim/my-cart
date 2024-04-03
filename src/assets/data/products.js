@@ -292,6 +292,7 @@ const products = [
     ],
     avgRating: 4.8,
   },
+
   {
     id: "25",
     productName: "Sakarias Armchair",
@@ -314,6 +315,7 @@ const products = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "11",
     productName: "Apple iPhone 12 Max",
@@ -566,6 +568,7 @@ const products = [
     ],
     avgRating: 4.8,
   },
+
 ];
 
 export default products;

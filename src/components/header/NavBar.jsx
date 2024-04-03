@@ -27,6 +27,28 @@ function NavBar() {
         })
     }
 
+    const [nav, setNav] = useState(false)
+
+    const handleNav = () => {
+        setNav(!nav);
+        console.log(nav)
+    }
+
+    useEffect(() => {
+        // let handleNav = () => {
+        //     setNav(false)
+        // }
+        // document.addEventListener("mousedown", handleNav)
+        document.addEventListener("click", function (event) {
+            const navbar = document.getElementById("nav0bar"); // Replace with your navbar's ID
+            if (!navbar.contains(event.target) && navbar.classList.contains("show")) {
+                navbar.classList.remove("show");
+            }
+        });
+
+
+    }, [])
+
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 50) {
@@ -37,14 +59,15 @@ function NavBar() {
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll)
+
     }, [])
 
     return (
         <>
-            <Navbar sticky="top" className={scrolled ? 'scrolled' : ''} expand="md">
+            <Navbar sticky="top" id="nav0bar" className={scrolled ? 'scrolled' : ''} expand="md">
                 <Container>
                     <Link className="navbar-brand logo-navbar" to="/">digital<span className="">.Shop</span> </Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav">
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleNav}>
                         <div className="toggler-icon top-bar"></div>
                         <div className="toggler-icon middle-bar"></div>
                         <div className="toggler-icon bottom-bar"></div>
