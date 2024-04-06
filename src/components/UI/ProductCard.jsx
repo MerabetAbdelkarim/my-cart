@@ -12,9 +12,11 @@ import { Blur } from 'transitions-kit'
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function ProductCard({ item }) {
+function ProductCard({ item, fav }) {
     const dispatch = useDispatch()
-    const [iconFav, setIconFav] = useState(false)
+    const sts = fav?true:false
+    const [iconFav, setIconFav] = useState(sts)
+    console.log('iconFav', iconFav)
 
     const addToCart = () => {
         dispatch(addItem(item))
@@ -50,10 +52,10 @@ function ProductCard({ item }) {
                     <motion.button whileTap={{ scale: 1.5 }} className="btn-love" onClick={addTofavorite} >
                         {
                             iconFav
-                            ?
-                            <AiFillHeart style={{ width: '25px', height: '25px', color: '#D04848' }} />
-                            :
-                            <AiOutlineHeart style={{ width: '25px', height: '25px', color: '#D04848' }} />
+                                ?
+                                <AiFillHeart style={{ width: '25px', height: '25px', color: '#D04848' }} />
+                                :
+                                <AiOutlineHeart style={{ width: '25px', height: '25px', color: '#D04848' }} />
                         }
                     </motion.button>
                 </div>
