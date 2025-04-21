@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Navbar, Container, Nav, NavDropdown, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
+import { LuShoppingCart } from "react-icons/lu";
 import { useSelector } from "react-redux";
 import useAuth from "../../custome-hooks/useAuth"
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 import { toast } from "react-toastify";
-import imageProfile from "../../assets/auth/profile.webp"
+import { LuUserCircle } from "react-icons/lu";
 
 function NavBar() {
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
@@ -90,7 +90,7 @@ function NavBar() {
                         </Nav>
                         <Nav className="d-flex">
                             <Link className="nav-link" to="/cart">
-                                <FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>
+                                <LuShoppingCart size={20} /> <span className="cart-nbr">{totalQuantity}</span>
                             </Link>
                             <NavDropdown
                                 title={
@@ -104,14 +104,7 @@ function NavBar() {
                                             alt="User profile"
                                         />
                                     ) : (
-                                        <img
-                                            style={{ objectFit: "cover" }}
-                                            src={imageProfile}
-                                            width="35px"
-                                            height="35px"
-                                            className="rounded-circle"
-                                            alt="Default profile"
-                                        />
+                                        <LuUserCircle size={20}/>
                                     )
                                 }
                                 id="basic-nav-dropdown"

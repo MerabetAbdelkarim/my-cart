@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 function Header() {
     return (
         <>
-            {/* <header>
+            <header>
                 <h2 className="title">Find the best  product for you</h2>
                 <p className="paragraph">Vestibulum tempus imperdiet sem ac porttitor. Vivamus pulvinar commodo orci, suscipit porttitor velit elementum non</p>
                 <div className="action">
@@ -35,7 +35,7 @@ function Header() {
                         </Col>
                     </Row>
                 </div>
-            </header> */}
+            </header>
         </>
     )
 }

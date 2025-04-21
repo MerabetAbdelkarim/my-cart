@@ -45,7 +45,7 @@ a {
 
 .logo-navbar span,
 .logo-footer span {
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: 600;
 }
 
@@ -75,15 +75,15 @@ a {
 /*---------- Navbat start -----------*/
 .navbar {
     transition: 0.4s ease-in-out;
-    background-color: #FFB562;
+    background-color: #ffffff;
 }
 
 .navbar .navbar-nav a {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .navbar .m-auto.navbar-nav a {
-    color: white;
+    color: rgb(0, 0, 0);
     position: relative;
 }
 
