@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Alert } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -64,9 +64,18 @@ function NavBar() {
 
     return (
         <>
+            <Alert
+                variant="dark"
+                className="rounded-0 border-0 py-2 px-0 m-0 d-flex justify-content-center align-items-center text-center bg-black text-white"
+            >
+                Sign up and get 20% off on your first order.{" "}
+                <Alert.Link href="#" className="text-decoration-underline text-white">Sign Up Now</Alert.Link>.
+            </Alert>
             <Navbar sticky="top" id="nav0bar" className={scrolled ? 'scrolled' : ''} expand="md">
                 <Container>
-                    <Link className="navbar-brand logo-navbar" to="/">digital<span className="">.Shop</span> </Link>
+                    <Link className="navbar-brand logo-navbar" to="/">
+                        digital<span>.Shop</span>
+                    </Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={handleNav}>
                         <div className="toggler-icon top-bar"></div>
                         <div className="toggler-icon middle-bar"></div>
@@ -80,26 +89,47 @@ function NavBar() {
                             <Link className="nav-link" to="/favorite">Favorite</Link>
                         </Nav>
                         <Nav className="d-flex">
-                            <Link className="nav-link" to="/cart"><FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>  </Link>
-                            <NavDropdown className="" title={user ? <img style={{ objectFit: "cover" }} src={user?.photoURL} width={'35px'} height={'35px'} className=" rounded-circle" /> : <img style={{ objectFit: "cover" }} src={imageProfile} width={'35px'} height={'35px'} className=" rounded-circle" />} id="basic-nav-dropdown">
-                                {
-                                    user
-                                        ?
-                                        <>
-                                            <NavDropdown.Item>
-                                                <Link to={'/dashboard'}>Dashboard</Link>
-                                            </NavDropdown.Item>
-                                            <NavDropdown.Item onClick={logout}>
-                                                <h6>logout</h6>
-                                            </NavDropdown.Item>
-                                        </>
-                                        :
-                                        <>
-                                            <NavDropdown.Item>
-                                                <Link to={'/authentication'}>Connect</Link>
-                                            </NavDropdown.Item>
-                                        </>
+                            <Link className="nav-link" to="/cart">
+                                <FaShoppingCart /> <span className="cart-nbr">{totalQuantity}</span>
+                            </Link>
+                            <NavDropdown
+                                title={
+                                    user ? (
+                                        <img
+                                            style={{ objectFit: "cover" }}
+                                            src={user?.photoURL}
+                                            width="35px"
+                                            height="35px"
+                                            className="rounded-circle"
+                                            alt="User profile"
+                                        />
+                                    ) : (
+                                        <img
+                                            style={{ objectFit: "cover" }}
+                                            src={imageProfile}
+                                            width="35px"
+                                            height="35px"
+                                            className="rounded-circle"
+                                            alt="Default profile"
+                                        />
+                                    )
                                 }
+                                id="basic-nav-dropdown"
+                            >
+                                {user ? (
+                                    <>
+                                        <NavDropdown.Item as={Link} to="/dashboard">
+                                            Dashboard
+                                        </NavDropdown.Item>
+                                        <NavDropdown.Item onClick={logout}>
+                                            Logout
+                                        </NavDropdown.Item>
+                                    </>
+                                ) : (
+                                    <NavDropdown.Item as={Link} to="/authentication">
+                                        Connect
+                                    </NavDropdown.Item>
+                                )}
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

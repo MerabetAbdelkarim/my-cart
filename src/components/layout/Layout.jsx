@@ -11,8 +11,8 @@ function Layout() {
         location.pathname.startsWith('/dashboard') ? <AdminNavbar /> : <NavBar />
       } */}
       <NavBar />
-      <Outlet />
-      <FooTer />
+      {/* <Outlet />
+      <FooTer /> */}
     </>
   )
 }

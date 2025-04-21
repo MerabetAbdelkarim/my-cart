@@ -16,7 +16,7 @@ function Home() {
 
     return (
         <Helmet title="Home">
-            <Container>
+            {/* <Container>
                 <Header />
                 <CarouselHome />
                 <Features />
@@ -26,7 +26,7 @@ function Home() {
             <Timer />
             <Container>
                 <Motivation />
-            </Container>
+            </Container> */}
         </Helmet>
     );
 }
