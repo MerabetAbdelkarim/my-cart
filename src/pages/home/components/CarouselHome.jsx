@@ -1,73 +1,34 @@
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import appleImg from "../../../assets/home/brands/apple.svg";
-import chanelImg from "../../../assets/home/brands/chanel.svg";
-import hpImg from "../../../assets/home/brands/hp.svg";
-import lacosteImg from "../../../assets/home/brands/lacoste.svg";
-import nbaImg from "../../../assets/home/brands/nba.svg";
-import nikeImg from "../../../assets/home/brands/nike.svg";
-import reebokImg from "../../../assets/home/brands/reebok.svg";
 import { Container } from "react-bootstrap";
-
+import calvinKleinImg from "../../../assets/home/brands/calvin-klein.svg";
+import gucciImg from "../../../assets/home/brands/gucci.svg";
+import pradaImg from "../../../assets/home/brands/prada.svg";
+import versaceImg from "../../../assets/home/brands/versace.svg";
+import zaraImg from "../../../assets/home/brands/zara.svg";
 
 function CarouselHome() {
-    const responsive = {
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 6,
-            slidesToSlide: 1 // optional, default to 1.
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 4,
-            slidesToSlide: 1 // optional, default to 1.
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 2,
-            slidesToSlide: 1 // optional, default to 1.
-        }
-    };
     return (
-
-    <>
-        <Container>
-            <Carousel
-                className="my-5"
-                autoPlay
-                customTransition="all 10s linear 0s"
-                infinite
-                pauseOnHover={false}
-                responsive={responsive}
-                arrows={false}
-                rewind={true}
-                draggable={false}
-            >
-                <div className="item">
-                    <img src={appleImg} alt="image apple brand" />
+        <div className="carousel bg-black">
+            <Container>
+                <div className="items">
+                    <div className="item">
+                        <img src={calvinKleinImg} alt="image calvinKlein brand" />
+                    </div>
+                    <div className="item">
+                        <img src={gucciImg} alt="image gucci brand" />
+                    </div>
+                    <div className="item">
+                        <img src={pradaImg} alt="image prada brand" />
+                    </div>
+                    <div className="item">
+                        <img src={versaceImg} alt="image versace brand" />
+                    </div>
+                    <div className="item">
+                        <img src={zaraImg} alt="image zara brand" />
+                    </div>
                 </div>
-                <div className="item">
-                    <img src={chanelImg} alt="image chanel brand" />
-                </div>
-                <div className="item">
-                    <img src={hpImg} alt="image hp brand" />
-                </div>
-                <div className="item">
-                    <img src={lacosteImg} alt="image lacoste brand" />
-                </div>
-                <div className="item">
-                    <img src={nbaImg} alt="image nba brand" />
-                </div>
-                <div className="item">
-                    <img src={nikeImg} alt="image nike brand" />
-                </div>
-                <div className="item">
-                    <img src={reebokImg} alt="image reebok brand" />
-                </div>
-            </Carousel>
-        </Container>
-    </>
-  )
+            </Container>
+        </div>
+    );
 }
 
-export default CarouselHome
+export default CarouselHome;
