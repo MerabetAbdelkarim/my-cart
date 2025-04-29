@@ -8,6 +8,7 @@ import { Container } from "react-bootstrap";
 import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
 import useGetData from "../../custome-hooks/useGetData";
+import DressStyle from "./components/DressStyle";
 
 function Home() {
     const { data: products } = useGetData('products')
@@ -19,12 +20,15 @@ function Home() {
             <Header />
             <CarouselHome />
             <Features />
-            {/*<NewProducts data={newProduct} />
-                <BestProduct data={bestProduct} /> */}
-            {/* <Timer />
-            <Container>
+            <NewProducts data={newProduct} />
+            <BestProduct data={bestProduct} />
+            <DressStyle />
+            {/* 
+                <Timer />
+                <Container>
                 <Motivation />
-            </Container> */}
+                </Container> 
+            */}
         </Helmet>
     );
 }
