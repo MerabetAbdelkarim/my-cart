@@ -1,42 +1,48 @@
-import { Col, Row } from "react-bootstrap"
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
-
-
+import { Button, Col, Container, Row } from "react-bootstrap"
+import HeaderImg from "../../../assets/home/header-img.svg"
 
 function Header() {
     return (
-        <>
-            <header>
-                <h2 className="title">Find the best  product for you</h2>
-                <p className="paragraph">Vestibulum tempus imperdiet sem ac porttitor. Vivamus pulvinar commodo orci, suscipit porttitor velit elementum non</p>
-                <div className="action">
-                    <Row>
-                        <Col className="o-last" md="12" lg="6">
-                            <motion.button whileTap={{ scale: 1.02 }} className="btn1"><Link to={"/products"}>Shop Now</Link></motion.button>
-                        </Col>
-                        <Col className="o-first" md="6" lg="6">
-                            <div className="nbrs">
-                                <Row>
-                                    <Col>
-                                        <div className="nbr-1">
-                                            <h6>26.5 k</h6>
-                                            <p>Collection</p>
-                                        </div>
-                                    </Col>
-                                    <Col>
-                                        <div className="nbr-2">
-                                            <h6>14 k</h6>
-                                            <p>Users</p>
-                                        </div>
-                                    </Col>
-                                </Row>
+        <header>
+            <div className="bg-light py-5">
+                <Container>
+                    <Row className="align-items-center">
+                        <Col md={6} className="text-center text-md-start">
+                            <h1 className="fw-bold display-5">
+                                FIND CLOTHES<br />THAT MATCHES<br />YOUR STYLE
+                            </h1>
+                            <p className="text-muted my-4">
+                                Browse through our diverse range of meticulously crafted garments, designed<br />
+                                to bring out your individuality and cater to your sense of style.
+                            </p>
+                            <Button variant="dark" size="lg">Shop Now</Button>
+                            <div className="d-flex justify-content-between mt-5 text-center text-md-start">
+                                <div>
+                                    <h5 className="fw-bold">200+</h5>
+                                    <small>International Brands</small>
+                                </div>
+                                <div>
+                                    <h5 className="fw-bold">2,000+</h5>
+                                    <small>High-Quality Products</small>
+                                </div>
+                                <div>
+                                    <h5 className="fw-bold">30,000+</h5>
+                                    <small>Happy Customers</small>
+                                </div>
                             </div>
                         </Col>
+                        <Col md={6} className="text-center">
+                            <img
+                                src={HeaderImg}
+                                alt="Stylish Models"
+                                className="img-fluid"
+                                style={{ maxHeight: '500px' }}
+                            />
+                        </Col>
                     </Row>
-                </div>
-            </header>
-        </>
+                </Container>
+            </div>
+        </header>
     )
 }
 
