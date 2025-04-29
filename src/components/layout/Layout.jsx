@@ -10,7 +10,7 @@ function Layout() {
       {/* {
         location.pathname.startsWith('/dashboard') ? <AdminNavbar /> : <NavBar />
       } */}
-      {/* <NavBar /> */}
+      <NavBar />
        <Outlet />
       {/* <FooTer />  */}
     </>

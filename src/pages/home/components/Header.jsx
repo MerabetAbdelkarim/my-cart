@@ -4,7 +4,7 @@ import HeaderImg from "../../../assets/home/header-img.png"
 function Header() {
     return (
         <header>
-            <div className="bg-yallow py-5">
+            <div className="bg-yallow">
                 <Container>
                     <Row className="align-items-center">
                         <Col md={6} className="text-center text-md-start">
