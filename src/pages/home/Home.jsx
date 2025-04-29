@@ -16,13 +16,11 @@ function Home() {
 
     return (
         <Helmet title="Home">
-            <Container>
-                <Header />
-                {/* <CarouselHome />
-                <Features />
+                {/* <Header /> */}
+                 <CarouselHome />
+                {/*<Features />
                 <NewProducts data={newProduct} />
                 <BestProduct data={bestProduct} /> */}
-            </Container>
             {/* <Timer />
             <Container>
                 <Motivation />
