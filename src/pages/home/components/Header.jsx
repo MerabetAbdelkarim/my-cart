@@ -1,21 +1,21 @@
 import { Button, Col, Container, Row } from "react-bootstrap"
-import HeaderImg from "../../../assets/home/header-img.svg"
+import HeaderImg from "../../../assets/home/header-img.png"
 
 function Header() {
     return (
         <header>
-            <div className="bg-light py-5">
+            <div className="bg-yallow py-5">
                 <Container>
                     <Row className="align-items-center">
                         <Col md={6} className="text-center text-md-start">
-                            <h1 className="fw-bold display-5">
+                            <h1 className="fw-bolder display-5">
                                 FIND CLOTHES<br />THAT MATCHES<br />YOUR STYLE
                             </h1>
                             <p className="text-muted my-4">
                                 Browse through our diverse range of meticulously crafted garments, designed<br />
                                 to bring out your individuality and cater to your sense of style.
                             </p>
-                            <Button variant="dark" size="lg">Shop Now</Button>
+                            <Button className="rounded-pill px-5" variant="dark" size="lg" >Shop Now</Button>
                             <div className="d-flex justify-content-between mt-5 text-center text-md-start">
                                 <div>
                                     <h5 className="fw-bold">200+</h5>
