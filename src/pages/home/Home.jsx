@@ -9,6 +9,7 @@ import BestProduct from "./components/BestProdutc";
 import Timer from "./components/Timer";
 import useGetData from "../../custome-hooks/useGetData";
 import DressStyle from "./components/DressStyle";
+import HappyCustomers from "./components/TestimonialCard";
 
 function Home() {
     const { data: products } = useGetData('products')
@@ -23,6 +24,7 @@ function Home() {
             <NewProducts data={newProduct} />
             <BestProduct data={bestProduct} />
             <DressStyle />
+            <HappyCustomers />
             {/* 
                 <Timer />
                 <Container>
